@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+terraform/.terraform/
+terraform/terraform.tfstate.backup
+.DS_Store
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.backup
