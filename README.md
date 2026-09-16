@@ -30,7 +30,7 @@ This tool audits both, automatically.
 5. Terraform **import commands and resource blocks** are generated from fixed
    templates (not AI) - guaranteeing syntactically correct, runnable fixes.
 
-   ```mermaid
+```mermaid
 flowchart TD
     A["Terraform<br/>(Blueprint - what SHOULD exist)"] --> C
     B["LocalStack<br/>(Fake AWS - what's ACTUALLY running)"] --> C
