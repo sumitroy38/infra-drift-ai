@@ -30,6 +30,17 @@ This tool audits both, automatically.
 5. Terraform **import commands and resource blocks** are generated from fixed
    templates (not AI) - guaranteeing syntactically correct, runnable fixes.
 
+   ```mermaid
+flowchart TD
+    A["Terraform<br/>(Blueprint - what SHOULD exist)"] --> C
+    B["LocalStack<br/>(Fake AWS - what's ACTUALLY running)"] --> C
+    C["Python Script<br/>(Compares Expected vs Actual)"] --> D{Drift Found?}
+    D -->|No| E["✅ All Clear<br/>No drift detected"]
+    D -->|Yes| F["Ollama AI<br/>(Explains risk in plain English)"]
+    F --> G["Templates<br/>(Generate correct Terraform fix code)"]
+    G --> H["📋 Report:<br/>Risk + Ready-to-run fix"]
+```
+
 ## Setup
 
 Requires: Docker, Terraform, Python 3.10+, and [Ollama](https://ollama.com/).
